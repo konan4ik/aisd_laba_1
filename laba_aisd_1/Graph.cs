@@ -62,9 +62,9 @@ public class Graph
 
             for (var i = 0; i < Size; i++)
             {
-                if (!selectedVertexes[i] && _data[i][v] != 0 && distances[i].Item1 > _data[i][v])
+                if (!selectedVertexes[i] && _data[v][i] != 0 && _data[v][i] < distances[i].Item1)
                 {
-                    distances[i] = new Tuple<int, int>(_data[i][v], v);
+                    distances[i] = new Tuple<int, int>(_data[v][i], v);
                 }
             }
         }
